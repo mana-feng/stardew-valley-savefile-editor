@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+build/
+dist/
+
+# PyInstaller
+*.spec
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Project specific
+generated/buildings.json
+generated/dimensions.json
+generated/farmanimals.json
+# Keep essential data files
+!generated/cookingrecipes.json
+!generated/craftingrecipes.json
+!generated/iteminfo.json
