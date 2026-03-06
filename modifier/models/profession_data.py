@@ -1,42 +1,84 @@
+# Define profession metadata and grouping used by player skill editors.
 PROFESSIONS = {
+
     "Farming": {
-        0: ("prof_0_name", "prof_0_desc", 5, None),
-        1: ("prof_1_name", "prof_1_desc", 5, None),
-        2: ("prof_2_name", "prof_2_desc", 10, 0),
-        3: ("prof_3_name", "prof_3_desc", 10, 0),
-        4: ("prof_4_name", "prof_4_desc", 10, 1),
-        5: ("prof_5_name", "prof_5_desc", 10, 1)
+
+        0: ("Rancher", "Animals produce goods 20% faster", 5, None),
+
+        1: ("Tiller", "Crops are worth 10% more", 5, None),
+
+        2: ("Coopmaster", "All Coop animals produce twice as much and befriend twice as fast", 10, 0),
+
+        3: ("Shepherd", "Barn animals produce twice as much and befriend twice as fast", 10, 0),
+
+        4: ("Artisan", "Artisan goods (wine, cheese, oil, etc.) are worth 40% more", 10, 1),
+
+        5: ("Agriculturist", "Crops grow 10% faster", 10, 1)
+
     },
-    "Mining": {
-        6: ("prof_6_name", "prof_6_desc", 5, None),
-        7: ("prof_7_name", "prof_7_desc", 5, None),
-        8: ("prof_8_name", "prof_8_desc", 10, 6),
-        9: ("prof_9_name", "prof_9_desc", 10, 6),
-        10: ("prof_10_name", "prof_10_desc", 10, 7),
-        11: ("prof_11_name", "prof_11_desc", 10, 7)
-    },
-    "Foraging": {
-        12: ("prof_12_name", "prof_12_desc", 5, None),
-        13: ("prof_13_name", "prof_13_desc", 5, None),
-        14: ("prof_14_name", "prof_14_desc", 10, 12),
-        15: ("prof_15_name", "prof_15_desc", 10, 12),
-        16: ("prof_16_name", "prof_16_desc", 10, 13),
-        17: ("prof_17_name", "prof_17_desc", 10, 13)
-    },
+
     "Fishing": {
-        18: ("prof_18_name", "prof_18_desc", 5, None),
-        19: ("prof_19_name", "prof_19_desc", 5, None),
-        20: ("prof_20_name", "prof_20_desc", 10, 18),
-        21: ("prof_21_name", "prof_21_desc", 10, 18),
-        22: ("prof_22_name", "prof_22_desc", 10, 19),
-        23: ("prof_23_name", "prof_23_desc", 10, 19)
+
+        6: ("Fisher", "Fish are worth 25% more", 5, None),
+
+        7: ("Trapper", "Crab pots work without bait", 5, None),
+
+        8: ("Angler", "Fish are worth 50% more", 10, 6),
+
+        9: ("Pirate", "Chance to find treasure while fishing doubled", 10, 6),
+
+        10: ("Mariner", "Crab pots never produce trash", 10, 7),
+
+        11: ("Luremaster", "Crab pots work without bait and never produce trash", 10, 7)
+
     },
+
+    "Foraging": {
+
+        12: ("Forester", "Chop down trees 50% faster", 5, None),
+
+        13: ("Gatherer", "Chance to double forage (20% chance)", 5, None),
+
+        14: ("Lumberjack", "Oak, Maple, and Pine trees have a chance to drop hardwood", 10, 12),
+
+        15: ("Tapper", "Syrup is worth 25% more", 10, 12),
+
+        16: ("Botanist", "Foraged goods are always iridium quality", 10, 13),
+
+        17: ("Tracker", "Shows location of forageable items on the map", 10, 13)
+
+    },
+
+    "Mining": {
+
+        18: ("Miner", "Gems and ore drop 1 extra", 5, None),
+
+        19: ("Geologist", "Chance for a gem node to drop two gems instead of one", 5, None),
+
+        20: ("Blacksmith", "Breaking rocks and metal nodes is 50% faster", 10, 18),
+
+        21: ("Prospector", "Chance for coal from rocks doubled", 10, 18),
+
+        22: ("Excavator", "Chance for geodes from rocks doubled", 10, 19),
+
+        23: ("Gemologist", "Gems are worth 30% more", 10, 19)
+
+    },
+
     "Combat": {
-        24: ("prof_24_name", "prof_24_desc", 5, None),
-        25: ("prof_25_name", "prof_25_desc", 5, None),
-        26: ("prof_26_name", "prof_26_desc", 10, 24),
-        27: ("prof_27_name", "prof_27_desc", 10, 24),
-        28: ("prof_28_name", "prof_28_desc", 10, 25),
-        29: ("prof_29_name", "prof_29_desc", 10, 25)
+
+        24: ("Fighter", "Deal 10% more damage and take 10% less damage", 5, None),
+
+        25: ("Scout", "Critical hit chance increased by 50%", 5, None),
+
+        26: ("Brute", "Deal 15% more damage", 10, 24),
+
+        27: ("Defender", "Take 15% less damage", 10, 24),
+
+        28: ("Acrobat", "Cooldown of special moves reduced by 50%", 10, 25),
+
+        29: ("Desperado", "Critical hits deal 3x damage instead of 2x", 10, 25)
+
     }
+
 }

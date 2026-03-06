@@ -1,33 +1,46 @@
+﻿import os
+from pathlib import Path
+
 import PyInstaller.__main__
-import os
-import sys
+
+
+APP_NAME = "StardewSaveEditor"
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+
+def _data_arg(source: str, target: str) -> str:
+
+    return f"--add-data={source}{os.pathsep}{target}"
+
 
 def build():
-    # 确保在项目根目录下运行
-    project_root = os.path.dirname(os.path.abspath(__file__))
-    os.chdir(project_root)
 
-    # 准备打包参数
+    os.chdir(PROJECT_ROOT)
+
     args = [
-        'modifier/main.py',              # 入口文件
-        '--onefile',                     # 打包成单个文件
-        '--noconsole',                   # 运行时不显示控制台
-        '--name=StardewSaveEditor',      # 生成的可执行文件名
-        '--paths=modifier',              # 将 modifier 目录加入搜索路径，解决 ui/models 模块找不到的问题
-        f'--add-data=modifier/F.png{os.pathsep}.', # 添加图标资源
-        f'--add-data=modifier/F.ico{os.pathsep}.', # 添加图标资源
-        f'--add-data=modifier/i18n{os.pathsep}i18n', # 添加语言包
-        f'--add-data=generated/cookingrecipes.json{os.pathsep}generated', # 添加数据文件
-        f'--add-data=generated/craftingrecipes.json{os.pathsep}generated',
-        f'--add-data=generated/iteminfo.json{os.pathsep}generated',
-        '--icon=modifier/F.ico',         # 设置可执行文件图标
-        '--clean',                       # 打包前清理临时文件
+        "modifier/main.py",
+        "--onefile",
+        "--noconsole",
+        f"--name={APP_NAME}",
+        "--paths=modifier",
+        "--icon=modifier/F.ico",
+        "--clean",
+        "--collect-all=ttkbootstrap",
+        "--collect-all=PIL",
+        _data_arg("modifier/F.png", "."),
+        _data_arg("modifier/F.ico", "."),
+        _data_arg("modifier/i18n", "i18n"),
+        _data_arg("modifier/generated", "generated"),
+        _data_arg("modifier/Installer/SMAPI/install.dat", "Installer/SMAPI"),
     ]
 
-    # 执行打包
-    print(f"开始打包 StardewSaveEditor.exe...")
+    print(f"Building {APP_NAME}.exe...")
+
     PyInstaller.__main__.run(args)
-    print(f"打包完成！可执行文件位于 dist/StardewSaveEditor.exe")
+
+    print(f"Build completed: dist/{APP_NAME}.exe")
+
 
 if __name__ == "__main__":
+
     build()

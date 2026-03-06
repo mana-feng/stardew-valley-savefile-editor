@@ -1,23 +1,46 @@
-# Python
+# Python bytecode
 __pycache__/
 *.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build artifacts
 build/
 dist/
-
-# PyInstaller
 *.spec
 
-# VS Code
+# IDE settings
 .vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Logs
 *.log
 
-# Project specific
-generated/buildings.json
-generated/dimensions.json
-generated/farmanimals.json
-# Keep essential data files
-!generated/cookingrecipes.json
-!generated/craftingrecipes.json
-!generated/iteminfo.json
+# Local test saves
+/SaveGameInfo
+/[0-9]*_[0-9]*
+
+# Local mod source folders created during development
+/modifier/mods/
+/modifier/Mods/
+
+# Runtime data under modifier/generated is intentionally tracked

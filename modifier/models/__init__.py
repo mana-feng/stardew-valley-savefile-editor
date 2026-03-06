@@ -1,8 +1,16 @@
-from models.base_proxy import BaseProxy
-from models.farmer import Farmer
-from models.item import Item
-from models.pet import Pet
-from models.pet_data import PET_DATA
-from models.chest import Chest
-from models.item_data import ITEM_CATEGORIES
-from models.profession_data import PROFESSIONS
+# Expose the XML-backed data models used throughout the save editor.
+from .base_proxy import BaseProxy
+
+from .chest import Chest
+
+from .farmer import Farmer
+
+from .item import Item
+
+from .item_data import ITEM_CATEGORIES
+
+from .pet import Pet
+
+from .pet_data import PET_DATA
+
+from .profession_data import PROFESSIONS
